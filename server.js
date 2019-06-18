@@ -1,11 +1,11 @@
-"use strict";
-
 const express = require("express");
 const mongo = require("mongodb");
 const mongoose = require("mongoose");
 
 const cors = require("cors");
 const bodyParser = require("body-parser");
+
+const urlHandler = require("./controllers/urlHandler.js");
 
 const app = express();
 
