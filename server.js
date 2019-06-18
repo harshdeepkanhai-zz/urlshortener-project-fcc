@@ -28,10 +28,9 @@ app.use("/public", express.static(process.cwd() + "/public"));
 app.get("/", (req, res) => res.sendFile(process.cwd() + "/views/index.html"));
 
 // your first API endpoint...
-app.get("/api/hello", function(req, res) {
-  res.json({ greeting: "hello API" });
-});
+app.post("/api/shorturl/new", urlHandler.addUrl);
 
+app.get("/api/shorturl/:shurl", urlHandler.processShortUrl);
 // Answer not found to all the wrong routes
 app.use((req, res, next) => {
   res.status(404);
